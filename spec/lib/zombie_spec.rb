@@ -33,6 +33,30 @@ describe "A Zombie" do
     zombie.should be_hungry
   end
 
+  it "responds to name" do
+    zombie = Zombie.new
+    zombie.should respond_to(:name)
+  end
+
+describe Zombie do
+  it{ should respond_to(:name) }
 end
 
+describe Zombie do
+  it { subject.name.should == "Ash"  }
+end
+
+describe Zombie do
+  context "when hungry" do
+    it "craves brains"
+    context "with a veggie preference" do
+      subject { Zombie.new(vegetarian: true) }
+      it "still crave brains"
+      its(:craving){ should == 'vegan brains'}
+    end
+  end
+end
+
+
+end
 
